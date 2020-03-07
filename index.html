@@ -10,9 +10,7 @@
     <script>
         window.addEventListener('load', () => {
             document.querySelector('#add-btn').addEventListener('click', () => {
-                document.querySelector('#abs').innerText += 'Soon after, the king married a new woman who was beautiful'
-
-                adaptiveCont.adjustHeight(document.querySelector('.cont'))
+                adaptiveCont(document.querySelector('.cont'))
             })
         })
     </script>
@@ -26,6 +24,10 @@
         margin: 0;
     }
 
+    button {
+        padding: 10px 15px;
+    }
+
     .relative {
         position: relative !important;
     }
@@ -37,7 +39,17 @@
         border: 1px solid #ccc;
     }
 
-    #abs {
+    .label {
+        width: 100px;
+        margin-bottom: 10px;
+        padding: 10px;
+        background: tomato;
+        color: #fff;
+    }
+
+    #abs,
+    #abs-2,
+    #abs-inner {
         position: absolute;
         padding-top: 100px;
         width: 400px;
@@ -48,6 +60,20 @@
         background: #eee;
     }
 
+    #abs-2 {
+        top: 100px;
+        left: 300px;
+    }
+
+    #abs-inner {
+        position: absolute;
+        top: 20px;
+        width: 200px;
+        background: #ddd;
+        border: 2px solid #ccc;
+        padding: 15px;
+    }
+
     .actions {
         margin: 30px 0;
         text-align: center;
@@ -56,30 +82,35 @@
     #add-btn {
         font-size: 18px;
     }
-
-    #inner-abs {
-        position: absolute;
-        top: 20px;
-        width: 200px;
-        height: 500px;
-        background: #ccc;
-        border: 1px solid #ccc;
-        padding: 15px;
-    }
 </style>
 
 <body>
     <div class="actions">
-        <button id="add-btn">Add content</button>
+        <button id="add-btn">Adapt</button>
     </div>
 
     <div class="cont">
+        <div class="label">Parent</div>
         <div id="abs">
+            <div class="label">Child 1</div>
             Once upon a time, long, long ago a king and queen ruled over a distant land.  The queen was kind and lovely and all the people of the realm adored her.  The only sadness in the queen's life was that she wished for a child but did not have one. One winter day, the queen was doing needle work while gazing out her ebony window at the new fallen snow.  A bird flew by the window startling the queen and she pricked her finger.  A single drop of blood fell on the snow outside her window.  As she looked at the blood on the snow she said to herself, "Oh, how I wish that I had a daughter that had skin as white as snow, lips as red as blood, and hair as black as ebony." Soon after that, the kind queen got her wish when she gave birth to a baby girl who had skin white as snow, lips red as blood, and hair black as ebony.  They named the baby princess Snow White, but sadly, the queen died after giving birth to Snow White.
 
             <!-- <div id="inner-abs">
                 I wish that I had a daughter that had skin as white as snow, lips as red as blood, and hair as black as ebony." Soon after that, the kind queen got her wish when she gave birth to a baby girl who had skin white as snow, lips red as blood, and hair black as ebony.  They named the baby princess Snow White, but sadly, the queen died after giving birth to Snow White.
             </div> -->
+        </div>
+
+        <div id="abs-2">
+            <div class="label">Child 2</div>
+            Once upon a time, long, long ago a king and queen ruled over a distant land.  The queen was kind and lovely and all the people of the realm adored her.  The only sadness in the queen's life was that she wished for a child but did not have one. One winter day, the queen was doing needle work while gazing out her ebony window at the new fallen snow.  A bird flew by the window startling the queen and she pricked her finger.  
+
+            <!-- <div id="inner-abs">
+                I wish that I had a daughter that had skin as white as snow, lips as red as blood, and hair as black as ebony." Soon after that, the kind queen got her wish when she gave birth to a baby girl who had skin white as snow, lips red as blood, and hair black as ebony.  They named the baby princess Snow White, but sadly, the queen died after giving birth to Snow White.
+            </div> -->
+
+            <div id="abs-inner">
+                <div class="label">Inner child</div>
+                ips as red as blood, and hair as black as ebony." Soon after that, the kind queen got her wish when she gave birth to a baby girl who had skin white as snow, lips red as blood, and hair black as ebony.  They named the baby princess Snow White, but sadly, the queen died after giving birth to Snow White.  as snow, lips red as blood, and hair black as ebony. </div>
         </div>
     </div>
 </body>
